@@ -38,48 +38,37 @@ This Support Agent Chatbot serves as a knowledge assistant for users working wit
 ### Data Processing Pipeline
 
 1. **Documentation Ingestion**
-   - Web scraping of CDP documentation sites
+   - Web scraping of CDP documentation sites using Cheerio
    - Content cleaning and structuring
    - Section identification and categorization
 
-2. **Document Indexing**
-   - Vector embeddings for semantic search
-   - Inverted index for keyword matching
-   - Document chunking for efficient retrieval
-
-3. **Query Processing**
-   - Intent classification
+2. **Query Processing**
+   - Intent classification via OpenAI API
    - Entity recognition for CDP platforms and features
    - Question reformulation for better matching
 
-4. **Response Generation**
-   - Context-aware answer composition
+3. **Response Generation**
+   - Context-aware answer composition using GPT
    - Step extraction and formatting
    - Source citation and reference linking
 
 ### Tech Stack
 
 #### Frontend
-- **React.js**: For building the interactive chat interface
-- **Tailwind CSS**: For styling and responsive design
-- **Socket.io-client**: For real-time communication with the server
+- **EJS (Embedded JavaScript)**: Templating engine for rendering dynamic HTML pages
+- **CSS & JavaScript**: Used for styling and interactive elements
 
 #### Backend
-- **Node.js**: JavaScript runtime for server-side code
-- **Express.js**: Web framework for handling HTTP requests
-- **LangChain**: Framework for working with language models and document processing
-- **Vector Database** (Pinecone/Weaviate): For semantic search capabilities
-- **OpenAI API**: For natural language understanding and generation
+- **Node.js**: JavaScript runtime for server-side execution
+- **Express.js**: Web framework for handling routes and HTTP requests
 
-#### Document Processing
-- **Cheerio/Puppeteer**: For web scraping documentation
-- **pdf.js**: For parsing PDF documentation
-- **natural**: NLP library for text processing
+#### Web Scraping & AI Integration
+- **Cheerio**: For web scraping and extracting structured data from documentation
+- **OpenAI API**: GPT-powered chatbot for natural language understanding
 
-#### Deployment
-- **Render**: For hosting the application
-- **MongoDB**: For storing chat history and user sessions
-- **Redis**: For caching frequent queries
+#### Deployment & Data Management
+- **Static File Management**: Public directory used for CSS, JavaScript, and other assets
+- **Render**: Cloud platform for deployment and hosting
 
 ## 📚 Knowledge Base Sources
 
@@ -95,8 +84,7 @@ The chatbot extracts information from official documentation of four major CDPs:
 ### Prerequisites
 - Node.js (v14 or higher)
 - npm (v6 or higher)
-- MongoDB (local or Atlas)
-- OpenAI API key or equivalent
+- OpenAI API key
 
 ### Installation
 
@@ -108,35 +96,49 @@ The chatbot extracts information from official documentation of four major CDPs:
 
 2. Install dependencies
    ```bash
-   # Install server dependencies
    npm install
-   
-   # Install client dependencies
-   cd client
-   npm install
-   cd ..
    ```
 
 3. Set up environment variables
    Create a `.env` file in the root directory with the following:
    ```
-   PORT=5000
-   MONGODB_URI=your_mongodb_connection_string
+   PORT=3000
    OPENAI_API_KEY=your_openai_api_key
    NODE_ENV=development
    ```
 
-4. Start the development server
+4. Start the server
    ```bash
-   # Run both frontend and backend
-   npm run dev
+   npm start
+   ```
    
-   # Or run separately
-   npm run server  # Backend only
-   npm run client  # Frontend only
+   For development with auto-reload:
+   ```bash
+   npm run dev
    ```
 
 5. Open your browser and navigate to `http://localhost:3000`
+
+## 📁 Project Structure
+
+```
+Chat-with-CredGpt/
+├── public/               # Static assets
+│   ├── css/              # Stylesheets
+│   ├── js/               # Client-side JavaScript
+│   └── images/           # Image assets
+├── views/                # EJS templates
+│   ├── index.ejs         # Main chat interface
+│   └── partials/         # Reusable template parts
+├── routes/               # Express routes
+├── controllers/          # Request handlers
+├── services/             # Business logic
+│   ├── scraper.js        # Documentation scraping logic
+│   └── chatbot.js        # OpenAI integration
+├── utils/                # Helper functions
+├── app.js                # Express application setup
+└── server.js             # Server entry point
+```
 
 ## 💬 Example Interactions
 
@@ -159,17 +161,16 @@ The chatbot extracts information from official documentation of four major CDPs:
 ## 🔍 How It Works
 
 ### Document Processing Workflow
-1. Documentation is scraped from official CDP websites
-2. Content is cleaned, parsed, and split into chunks
-3. Text chunks are embedded and stored in vector database
-4. Metadata and structure are preserved for context
+1. Documentation is scraped from official CDP websites using Cheerio
+2. Content is cleaned, parsed, and structured for efficient retrieval
+3. Information is organized by CDP platform and feature categories
 
 ### Query-Response Flow
 1. User submits a question through the chat interface
-2. Question is analyzed for intent and CDP-specific entities
-3. Relevant documentation sections are retrieved using semantic search
-4. Answer is generated from retrieved context
-5. Response is formatted and presented to the user
+2. Question is analyzed using OpenAI's natural language understanding
+3. Relevant documentation sections are identified based on the query
+4. GPT generates a comprehensive answer from the relevant documentation
+5. Response is formatted and presented to the user in the chat interface
 
 ## 🔮 Future Enhancements
 
@@ -183,14 +184,15 @@ The chatbot extracts information from official documentation of four major CDPs:
    - Step-by-step interactive walkthroughs
    - Code samples and templates
 
-3. **Personalized Recommendations**
-   - User-specific implementation advice
-   - Industry-specific best practices
-   - Use case optimization suggestions
+3. **Improved Documentation Coverage**
+   - More comprehensive scraping of documentation
+   - Regular updates to keep information current
+   - Support for additional CDPs
 
-4. **Multi-language Support**
-   - Documentation in multiple languages
-   - Question-answering in user's preferred language
+4. **Performance Optimizations**
+   - Caching frequent queries
+   - More efficient document retrieval
+   - Reduced API calls to OpenAI
 
 ## 🤝 Contributing
 
