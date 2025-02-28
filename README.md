@@ -32,9 +32,6 @@ This Support Agent Chatbot serves as a knowledge assistant for users working wit
 - [x] Processing lengthy/complex questions
 - [x] Filtering non-CDP related questions
 - [x] Providing step-by-step instructions
-- [ ] Cross-CDP feature comparisons
-- [ ] Advanced platform-specific configurations
-- [ ] Custom integration guides
 
 ## 🛠️ Technical Architecture
 
