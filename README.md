@@ -1,83 +1,85 @@
 # CDP Support Agent Chatbot
 
-A specialized chatbot designed to answer "how-to" questions related to four major Customer Data Platforms (CDPs): Segment, mParticle, Lytics, and Zeotap.
+A specialized AI-powered chatbot designed to answer "how-to" questions for four major Customer Data Platforms (CDPs): Segment, mParticle, Lytics, and Zeotap.
 
-**Live Demo**: [https://chat-with-credgpt-1.onrender.com](https://chat-with-credgpt-1.onrender.com)  
-**Repository**: [https://github.com/ujjwalkumar72353/Chat-with-CredGpt](https://github.com/ujjwalkumar72353/Chat-with-CredGpt)
-
-![CDP Support Agent Chatbot](https://via.placeholder.com/800x400)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Try%20it%20now-blue)](https://chat-with-credgpt-1.onrender.com)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-green)](https://github.com/ujjwalkumar72353/Chat-with-CredGpt)
 
 ## 📋 Project Overview
 
-This Support Agent Chatbot serves as a knowledge assistant for users working with Customer Data Platforms. It extracts relevant information from official documentation of major CDPs to provide step-by-step guidance on platform-specific tasks, feature implementations, and technical configurations.
+This CDP Support Agent Chatbot serves as an intelligent knowledge assistant for users working with Customer Data Platforms. It extracts relevant information from the official documentation of major CDPs to provide step-by-step guidance on:
 
-## ✅ Implementation Status
+- Platform-specific tasks and workflows
+- Feature implementations and configurations
+- Technical troubleshooting and best practices
+- Cross-platform comparisons and recommendations
 
-### Core Functionalities
-- [x] Basic chat interface with message history
-- [x] Question processing and intent recognition
-- [x] Documentation extraction and parsing
-- [x] Response generation for how-to questions
-- [x] CDP-specific knowledge base integration
-- [x] Question validation and filtering
+## ✅ Features
+
+### Core Functionality
+- 💬 Interactive chat interface with persistent message history
+- 🧠 Advanced question processing and intent recognition
+- 📚 Documentation extraction and intelligent parsing
+- 📝 Detailed response generation for how-to questions
+- 🔄 Context-aware follow-up question handling
 
 ### Platform Coverage
-- [x] Segment CDP support
-- [x] mParticle CDP support
-- [x] Lytics CDP support
-- [x] Zeotap CDP support
+- [x] **Segment CDP** support
+- [x] **mParticle CDP** support
+- [x] **Lytics CDP** support
+- [x] **Zeotap CDP** support
 
 ### Special Features
-- [x] Handling question variations and phrasing differences
-- [x] Processing lengthy/complex questions
-- [x] Filtering non-CDP related questions
-- [x] Providing step-by-step instructions
+- 🔍 Handling of question variations and different phrasings
+- 📊 Processing of complex, multi-part questions
+- 🚫 Filtering of non-CDP related questions
+- 📋 Providing clear, step-by-step instructions
 
 ## 🛠️ Technical Architecture
 
 ### Data Processing Pipeline
 
-1. **Documentation Ingestion**
-   - Web scraping of CDP documentation sites using Cheerio
-   - Content cleaning and structuring
-   - Section identification and categorization
+#### Documentation Ingestion
+- Web scraping of CDP documentation sites using Cheerio
+- Content cleaning and structural organization
+- Section identification and contextual categorization
 
-2. **Query Processing**
-   - Intent classification via OpenAI API
-   - Entity recognition for CDP platforms and features
-   - Question reformulation for better matching
+#### Query Processing
+- Intent classification via OpenAI API
+- Entity recognition for CDP platforms and features
+- Question reformulation for optimal matching
 
-3. **Response Generation**
-   - Context-aware answer composition using GPT
-   - Step extraction and formatting
-   - Source citation and reference linking
+#### Response Generation
+- Context-aware answer composition using OpenAI GPT models
+- Step extraction and coherent formatting
+- Source citation and reference linking
 
 ### Tech Stack
 
 #### Frontend
-- **EJS (Embedded JavaScript)**: Templating engine for rendering dynamic HTML pages
-- **CSS & JavaScript**: Used for styling and interactive elements
+- **EJS (Embedded JavaScript)**: Templating engine for dynamic HTML pages
+- **CSS & JavaScript**: UI styling and interactive elements
 
 #### Backend
 - **Node.js**: JavaScript runtime for server-side execution
 - **Express.js**: Web framework for handling routes and HTTP requests
 
-#### Web Scraping & AI Integration
-- **Cheerio**: For web scraping and extracting structured data from documentation
-- **OpenAI API**: GPT-powered chatbot for natural language understanding
+#### AI & Data Processing
+- **Cheerio**: Web scraping and structured data extraction
+- **OpenAI API**: Natural language understanding and response generation
+- **Pinecone**: Vector database for efficient knowledge retrieval
 
-#### Deployment & Data Management
-- **Static File Management**: Public directory used for CSS, JavaScript, and other assets
+#### Deployment
 - **Render**: Cloud platform for deployment and hosting
 
 ## 📚 Knowledge Base Sources
 
-The chatbot extracts information from official documentation of four major CDPs:
+The chatbot draws information from official documentation of four major CDPs:
 
-- **Segment Documentation**: [https://segment.com/docs/?ref=nav](https://segment.com/docs/?ref=nav)
+- **Segment Documentation**: [https://segment.com/docs/](https://segment.com/docs/?ref=nav)
 - **mParticle Documentation**: [https://docs.mparticle.com/](https://docs.mparticle.com/)
 - **Lytics Documentation**: [https://docs.lytics.com/](https://docs.lytics.com/)
-- **Zeotap Documentation**: [https://docs.zeotap.com/home/en-us/](https://docs.zeotap.com/home/en-us/)
+- **Zeotap Documentation**: [https://docs.zeotap.com/](https://docs.zeotap.com/home/en-us/)
 
 ## 🚀 Getting Started
 
@@ -85,35 +87,36 @@ The chatbot extracts information from official documentation of four major CDPs:
 - Node.js (v14 or higher)
 - npm (v6 or higher)
 - OpenAI API key
+- Pinecone API key
 
 ### Installation
 
-1. Clone the repository
+1. **Clone the repository**
    ```bash
    git clone https://github.com/ujjwalkumar72353/Chat-with-CredGpt.git
    cd Chat-with-CredGpt
    ```
 
-2. Install dependencies
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. Set up environment variables
+3. **Set up environment variables**  
    Create a `.env` file in the root directory with the following:
    ```
-   PINECONE_API_KEY
-   GROQ_API_KEY=
+   OPENAI_API_KEY=your_openai_api_key
+   PINECONE_API_KEY=your_pinecone_api_key
    PORT=3000
    ```
 
-4. Start the server
+4. **Start the server**
    ```bash
-    node index.js
+   node index.js
    ```
 
-
-5. Open your browser and navigate to `http://localhost:3000`
+5. **Access the application**  
+   Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Project Structure
 
@@ -165,34 +168,34 @@ Chat-with-CredGpt/
 1. User submits a question through the chat interface
 2. Question is analyzed using OpenAI's natural language understanding
 3. Relevant documentation sections are identified based on the query
-4. GPT generates a comprehensive answer from the relevant documentation
+4. OpenAI generates a comprehensive answer from the relevant documentation
 5. Response is formatted and presented to the user in the chat interface
 
 ## 🔮 Future Enhancements
 
-1. **Enhanced Cross-CDP Comparisons**
-   - Feature parity tables
-   - Side-by-side implementation guides
-   - Performance benchmarks
+### Enhanced Cross-CDP Comparisons
+- Feature parity tables
+- Side-by-side implementation guides
+- Performance benchmarks
 
-2. **Interactive Tutorials**
-   - Visual guides with screenshots
-   - Step-by-step interactive walkthroughs
-   - Code samples and templates
+### Interactive Tutorials
+- Visual guides with screenshots
+- Step-by-step interactive walkthroughs
+- Code samples and templates
 
-3. **Improved Documentation Coverage**
-   - More comprehensive scraping of documentation
-   - Regular updates to keep information current
-   - Support for additional CDPs
+### Improved Documentation Coverage
+- More comprehensive scraping of documentation
+- Regular updates to keep information current
+- Support for additional CDPs
 
-4. **Performance Optimizations**
-   - Caching frequent queries
-   - More efficient document retrieval
-   - Reduced API calls to OpenAI
+### Performance Optimizations
+- Caching frequent queries
+- More efficient document retrieval
+- Reduced API calls to OpenAI
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request:
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -200,6 +203,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-
+## 👨‍💻 Author
 
 Created by [Ujjwal Kumar](https://github.com/ujjwalkumar72353)
