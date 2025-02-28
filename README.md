@@ -102,20 +102,16 @@ The chatbot extracts information from official documentation of four major CDPs:
 3. Set up environment variables
    Create a `.env` file in the root directory with the following:
    ```
+   PINECONE_API_KEY
+   GROQ_API_KEY=
    PORT=3000
-   OPENAI_API_KEY=your_openai_api_key
-   NODE_ENV=development
    ```
 
 4. Start the server
    ```bash
-   npm start
+    node index.js
    ```
-   
-   For development with auto-reload:
-   ```bash
-   npm run dev
-   ```
+
 
 5. Open your browser and navigate to `http://localhost:3000`
 
@@ -204,16 +200,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👏 Acknowledgments
-
-- Based on official documentation from Segment, mParticle, Lytics, and Zeotap
-- Built as an assignment project
-- Special thanks to all contributors
-
----
 
 Created by [Ujjwal Kumar](https://github.com/ujjwalkumar72353)
