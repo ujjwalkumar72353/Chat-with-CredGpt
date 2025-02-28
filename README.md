@@ -1,5 +1,4 @@
-markdown
-Copy
+
 # Chat with CredGpt
 
 Chat with CredGpt is a project that allows users to interact with a GPT-based model in a secure and authenticated environment. This project integrates user authentication and authorization mechanisms to ensure that only authorized users can access the chat functionality.
